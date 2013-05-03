@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	
+<!--
+TITLE: index.hmtl (For Project 7) Time Keeper App 
+AUTHOR: Thomas J. Byker (TJB), CSCI N300 2013, Spring Session
+PURPOSE: Index.html page for Project 7. The Final Project. 
+ORIGINALLY CREATED ON: 04.29.2013
+LAST MODIFIED ON: 05.02.2013
+LAST MODIFIED BY: Thomas J. Byker (TJB)
+MODIFICATION HISTORY: GITHub Initial Push to Server 05.02.2013
+-->
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        
+        <title>Time Keeper - TJB</title>
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="assets/css/themes/apple.css" />
+       
+        <link rel="stylesheet" href="assets/css/clock.css" />
+        <link rel="stylesheet" href="assets/css/app.css" />
+        
+       
+        <script src="assets/js/libs/modernizr.js"></script>
+        <script src="assets/js/libs/noprefix.js"></script>
+
+    </head>
+    <body>
+    	<!-- The jqt div provides the access to all of JQtouch's features -->
+    	<div id="jqt">
+    
+    		<div id="home">
+                <header class="toolbar">
+                    <h1><a href="#">Time Keeper</a></h1>
+                    <a class="button slideup todo-app-new-project" id="infoButton" href="#project-form"><i class="icon-plus"></i></a>
+                </header>
+                <ul class="page todo-app-projects"></ul>
+            </div>
+            
+            <!-- The project div -->
+    		<div id="project">
+                <header class="toolbar">
+                    <h1>Time Keeper Clock</h1>
+                    <a class="leftButton button slideright" id="infoButton" href="#home"><i class="icon-home"></i></a>
+                    <a class="button slideup todo-app-edit-project" href="#edit-project-form">Edit</a>
+                </header>
+                
+                <!-- The clock div -->
+                <div class="clock">
+                
+                	<div id="clock"></div>
+                	
+                </div>
+                
+                <form class="todo-app-timecard-form">
+                	<a href="#" class="todo-app-timecard-form-cancel"><i class="icon-remove"></i></a>
+                	<label for="details">Details</label>
+                	<textarea name="details"></textarea>
+                </form>
+                
+                <a href="#" class="block button todo-start-stop">Start</a>
+                
+                <div class="page todo-app-project-stats">
+                	Total Time: 20 Hours and 0 mins: $800
+                </div>
+                
+                <div class="page todo-app-timecards"></div>
+                
+            </div>
+             
+            <!-- The new project form div -->           
+            <div id="project-form">
+               
+                <header class="toolbar">
+                    <h1>New Project</h1>
+                    <a class="leftButton button slidedown" href="#home">Cancel</a>
+                </header>
+                
+	        	<form action="#" class="todo-app-project-form">
+                    <ul class="edit rounded page">
+                        <li>                        	
+                        	<label for="description">Project Name</label>
+                        	<input type="text" name="name" id="name" placeholder="Enter Project Name">
+                        </li>
+                        <li>                        	
+                        	<label for="rate">Hourly Rate</label>
+                        	<input type="text" name="rate" id="rate" placeholder="$200.00">
+                        </li>
+                        <li>
+                        	<label for="description">Project Description</label>
+                        	<textarea name="street" id="description" placeholder="Enter Project Description"></textarea>
+                        </li>
+                    </ul>
+                    
+                    <div class="page">
+                    	<button type="submit" class="submit block button">Create Project</button>
+                    </div>
+                    
+                </form> 
+                
+            </div>
+             
+            <!-- The edit project form div -->                    
+            <div id="edit-project-form">
+               
+                <header class="toolbar">
+                    <h1>Edit Project</h1>
+                    <a class="leftButton button slidedown" href="#project">Cancel</a>
+                    <a class="rightButton button slideleft" href="#delete">Delete</a>
+                </header>
+                
+	        	<form action="#" class="todo-app-edit-project-form">
+                    <ul class="edit rounded page">
+                        <li>                        	
+                        	<label for="description">Project Name</label>
+                        	<input type="text" name="name" id="name" placeholder="Enter Project Name">
+                        </li>
+                        <li>                        	
+                        	<label for="rate">Hourly Rate</label>
+                        	<input type="text" name="rate" id="rate" placeholder="$200.00">
+                        </li>
+                        <li>
+                        	<label for="description">Project Description</label>
+                        	<textarea name="street" id="description" placeholder="Enter Project Description"></textarea>
+                        </li>
+                    </ul>
+                    
+                    <div class="page">
+                    	<button type="submit" class="submit block button">Save Changes</button>
+                    </div>
+                    
+                </form> 
+                
+            </div>
+            
+            <!-- The project timecard form div -->         
+            <div id="timecard-form">
+               
+                <header class="toolbar">
+                    <h1>Edit Timecard</h1>
+                    <a class="leftButton button slidedown" href="#project">Cancel</a>
+                </header>
+                
+	        	<form action="#" class="todo-app-edit-timecard-form">
+                    <ul class="edit rounded page">
+                        <li>                        	
+                        	<label for="time">Time</label>
+                        	<input type="text" name="time" id="time">
+                        </li>
+                        <li>
+                        	<label for="details">Details</label>
+                        	<textarea name="details" id="details"></textarea>
+                        </li>
+                    </ul>
+                    
+                    <div class="page">
+                    	<button type="submit" class="submit block button">Edit Timecard</button>
+                    </div>
+                    
+                </form> 
+                
+            </div>
+         	
+         	<!-- The delete project form div --> 
+            <div id="delete">
+            	
+                <header class="toolbar">
+                    <h1>Delete Project</h1>
+                    <a class="leftButton button slideright" href="#edit-project-form">Cancel</a>
+                </header>
+                
+	        	<form action="#" class="page todo-app-delete-project-form">
+                    
+                    <div class="empty"><p><i class="icon-warning-sign"></i> You sure you want to delete this project?</p></div>
+                    
+                    <button type="submit" class="block button">Yes, Delete this Project</button>                    
+                </form>        		
+		        	
+            </div>
+            
+            <!-- The trash timecard project form div -->
+            <div id="timecard-trash">
+            	
+                <header class="toolbar">
+                    <h1>Delete Timecard</h1>
+                    <a class="leftButton button slidedown" href="#project">Cancel</a>
+                </header>
+                
+	        	<form action="#" class="todo-app-delete-timecard page scroll">
+                    
+                    <div class="empty"><p><i class="icon-warning-sign"></i> You sure you want to delete this timecard?</p></div>
+                    
+                    <button type="submit" class="submit block button">Yes, Delete this Timecard</button>
+                    
+                </form>        		
+		        	
+            </div>
+            
+            
+        </div>
+                
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="assets/js/libs/jquery.js"><\/script>')</script>
+        <script src="assets/js/libs/jqtouch.js" type="text/javascript"></script>
+        <script src="assets/js/libs/jqtouch-jquery.js" type="text/javascript"></script>
+        <script type="text/javascript" src="assets/js/libs/localstoragedb.js"></script>
+        <script type="text/javascript" src="assets/js/libs/flipclock/libs/base.js"></script>
+        <script type="text/javascript" src="assets/js/libs/flipclock/flipclock.js"></script>
+        <script type="text/javascript" src="assets/js/libs/flipclock/faces/hourlycounter.js"></script>
+        <script src="assets/js/app-tjb.js" type="text/javascript"></script>
+        
+    </body>
+</html>
